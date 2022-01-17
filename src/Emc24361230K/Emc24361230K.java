@@ -5,21 +5,32 @@
  */
 package Emc24361230K;
 
-
+/**
+ * @version 1.2
+ * @author Enrique Martinez crespo
+ */
 public class Emc24361230K {
 
     static final double FACTOR_HORA_EXTRA = 1.2;
     private String nombreCompleto, dni;
     private double salarioBasePorHora = 10.56;
 
-   
+    /**
+     * 
+     * @param nombreCompleto especificamos el nombre
+     * @param dni especificamos el DNI
+     */
     public void AnalistaED_24361230K(String nombreCompleto, String dni) {
         this.nombreCompleto = nombreCompleto;
         this.dni = dni; 
 
     }
 
-    
+    /**
+     * 
+     * @param horasExtra nos dice las horas extra realizadas
+     * @return nos devuelve el salario final
+     */
     public double getSalarioEsteMes(int horasExtra) {
         double cantidadExtra, salarioFinal;
         cantidadExtra = horasExtra * this.salarioBasePorHora
@@ -29,13 +40,5 @@ public class Emc24361230K {
         return salarioFinal;
     }
 
-    // Este método no lo comentaremos con JavaDoc
-    public static void main(String[] args) {
-        AnalistaED_24361230K emp = new AnalistaED_24361230K("Enrique Martinez","2436130K");
-        int horasExtra = 2;
-        System.out.println("El salario de " + emp.nombreCompleto + " este mes
-será de " + emp.getSalarioEsteMes(horasExtra)
- + " euros, al hacer " + horasExtra + " horas extra.");
- }
     
 }
